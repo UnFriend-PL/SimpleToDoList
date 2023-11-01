@@ -8,4 +8,6 @@ public interface IToDoService {
     public CompletableFuture<ToDo> getTaskAsync(int id);
     public CompletableFuture<String> setDoneAsync(int taskId, boolean isDone);
     public CompletableFuture<String> deleteTaskAsync(int id);
+    public CompletableFuture<String> addTaskAsync(ToDo toDo);
+
 }

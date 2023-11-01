@@ -27,4 +27,12 @@ public class ToDo {
     private Date created;
     @BooleanFlag
     private boolean isdone;
+
+    public ToDo(String name, Date deadline) {
+        this.name = name;
+        this.deadline = deadline;
+        this.created = new Date();
+        this.isdone = false;
+    }
 }
+

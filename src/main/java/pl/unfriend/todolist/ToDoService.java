@@ -48,4 +48,14 @@ public class ToDoService implements IToDoService {
         }
         return CompletableFuture.completedFuture(null);
     }
+
+    @Async
+    public CompletableFuture<String> addTaskAsync(ToDo toDo) {
+        try {
+            ToDo savedToDo = toDoRepository.save(toDo);
+            return CompletableFuture.completedFuture("Task added successfully with ID: " + savedToDo.getId());
+        } catch (Exception e) {
+            return CompletableFuture.completedFuture("Failed to add task: " + e.getMessage());
+        }
+    }
 }
